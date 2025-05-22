@@ -1,17 +1,7 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
+/// Sem o output, os arquivos em .prisma serão gerados no node_modules
+///   Utilizar no terminal >npx prisma generate + '@prisma/client' na importação
 generator client {
   provider = "prisma-client-js"
-  /*
-  Sem o output, os arquivos em .prisma serão gerados no node_modules
-  Utilizar no terminal >npx prisma generate + '@prisma/client' na importação
-  */
-  // A partir da versão 7 do prisma é obrigatório o uso do output
-  // output   = "../generated/prisma"
 }
 
 datasource db {
@@ -20,8 +10,14 @@ datasource db {
 }
 
 model User {
-  id        String  @id 
+  id        String  @id
   nome      String
   sobrenome String?
   idade     Int
+}
+
+model veiculo {
+  id     String @id @default(uuid())
+  modelo String
+  marca  String?
 }

@@ -1,0 +1,12 @@
+schema.prisma 
+/*
+Sem o output no generator client, os arquivos em .prisma serão gerados no node_modules
+Utilizar no terminal >npx prisma generate + '@prisma/client' na importação
+*/
+// A partir da versão 7 do prisma é obrigatório o uso do output
+// output   = "../generated/prisma"
+
+// Comando para atualizar schema.prisma com atualizações feitas no db = >npx prisma db pull
+// Comando para atualizar db com atualizações feitas no schema.prisma = >npx prisma db push
+
+// Criar uma migração(save) do DB = >npx prisma migrate dev --name (nome da migracao)
